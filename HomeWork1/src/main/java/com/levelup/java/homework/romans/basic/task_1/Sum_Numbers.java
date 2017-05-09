@@ -1,16 +1,16 @@
 package main.java.com.levelup.java.homework.romans.basic.task_1;
-import java.util.Scanner;
 
-/**
- * Created by roman on 09.05.2017.
- */
+import java.util.Scanner;
+import static java.lang.Math.abs;
+
 public class Sum_Numbers {
     public static void main (String s[]) {
+        int num;
         Scanner in = new Scanner(System.in);
-        int numb;
-        System.out.print("Введите четырехзначное число: ");
-        in.nextInt();
-
+        do {
+            System.out.print("Введите четырехзначное число: ");
+            num = in.nextInt();
+        } while (abs(num) < 1000 || abs(num) > 9999);
+        System.out.println(num/100/10 + num/100%10 == num%100/10 + num%100%10);
     }
-
 }
