@@ -6,7 +6,7 @@ import static java.lang.Math.sqrt;
 
 public class Square_Triangle {
     public static void main (String s[]) {
-        double katet_a, katet_b = 0.0;
+        double katet_a, katet_b;
         Scanner in = new Scanner(System.in);
         do {
             System.out.print("Введите длину катета а (положительное число): ");
