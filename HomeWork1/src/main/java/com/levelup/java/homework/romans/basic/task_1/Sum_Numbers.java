@@ -5,11 +5,13 @@ import static java.lang.Math.abs;
 
 public class Sum_Numbers {
     public static void main (String s[]) {
-        int num;
+        int num = 0;
         Scanner in = new Scanner(System.in);
         do {
             System.out.print("Введите четырехзначное число: ");
-            num = in.nextInt();
+            if (in.hasNextInt() == true) {
+                num = in.nextInt();}
+            else continue;
         } while (abs(num) < 1000 || abs(num) > 9999);
         System.out.println(num/100/10 + num/100%10 == num%100/10 + num%100%10);
     }
