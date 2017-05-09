@@ -1,7 +1,6 @@
 package main.java.com.levelup.java.homework.romans.basic.task_1;
 
 import java.util.Scanner;
-import static java.lang.Math.abs;
 import static java.lang.Math.sqrt;
 
 public class Square_Triangle {
