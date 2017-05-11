@@ -5,7 +5,7 @@ import static java.lang.Math.sqrt;
 
 public class Square_Triangle {
     public static void main (String s[]) {
-        double katet_a = 0, katet_b = 0;
+        double katet_a = 0.0, katet_b = 0.0;
         Scanner in = new Scanner(System.in);
         do {
             System.out.print("Введите длину катета а (положительное число): ");
@@ -19,7 +19,7 @@ public class Square_Triangle {
         } while (katet_b <= 0);
         in.close();
 
-        System.out.printf("Периметр треугольника: %s%n", (float)katet_a + katet_b + sqrt(katet_a * katet_a + katet_b * katet_b));
-        System.out.printf("Площадь треугольника: %s%n", (float)0.5 * katet_a * katet_b);
+        System.out.printf("Периметр треугольника: %s%n", katet_a + katet_b + sqrt(katet_a * katet_a + katet_b * katet_b));
+        System.out.printf("Площадь треугольника: %s%n", 0.5 * katet_a * katet_b);
     }
 }
