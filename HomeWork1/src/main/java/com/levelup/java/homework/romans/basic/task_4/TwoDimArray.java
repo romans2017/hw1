@@ -30,12 +30,16 @@ public class TwoDimArray {
        int razd_row = 3;
        int razd_col = 4;
 
-       int num_columns_norm = num_columns%2==0 ? num_columns/2 : num_columns/2+1;
-       int num_rows_norm = num_rows%2==0 ? num_rows/2 : num_rows/2+1;
-       int razn = Math.abs(num_columns - num_rows);
+       int dim_norm = Math.min(num_columns%2==0 ? num_columns/2 : num_columns/2+1, num_rows%2==0 ? num_rows/2 : num_rows/2+1);
 
        for (int i=0; i < num_rows; i++) {
            for (int j=0; j < num_columns; j++) {
+
+               if (i == j){
+                   twoDimArray[i][j] = '1';
+
+               }
+
 
               if (num_rows > num_columns) {
                   if (j < num_columns_norm & i == j) {
