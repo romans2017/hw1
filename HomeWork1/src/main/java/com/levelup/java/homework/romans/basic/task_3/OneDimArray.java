@@ -16,13 +16,15 @@ public class OneDimArray {
             System.out.print("Введите количество чисел в массиве: ");
             if (in.hasNextInt()) num = in.nextInt();
             else in.next();
-        } while (num < 0);
+        } while (num <= 0);
         in.close();
 
         Random random = new Random();
         DoubleStream stream_doubles = random.doubles(num, -1000, 1001);
         double[] oneDimArrayRandom = stream_doubles.toArray();
-        int mas_len = num%2==0 ? num/2 : num/2 + 1;
+        //если раскомментить, то будет учитывать средний элемент в нечетных массивах
+        //int mas_len = num%2==0 ? num/2 : num/2 + 1;
+        int mas_len = num/2;
         for (int i = 0; i < mas_len; i++) {
             maximum = max(maximum, oneDimArrayRandom[i] + oneDimArrayRandom[num-1 - i]);
         }
