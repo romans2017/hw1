@@ -3,7 +3,7 @@ package main.java.com.levelup.java.homework.romans.basic.task_2;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import java.util.Scanner;
-import static java.lang.Math.*;
+import static java.lang.Math.tan;
 
 public class Function {
     public static void main (String s[]) {
