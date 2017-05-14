@@ -30,31 +30,18 @@ public class TwoDimArray {
        int razd_row = 3;
        int razd_col = 4;
 
-       int dim_norm = Math.min(num_columns%2==0 ? num_columns/2 : num_columns/2+1, num_rows%2==0 ? num_rows/2 : num_rows/2+1);
+       int norm_mat = Math.min(num_columns, num_rows);
+       int norm_dim = norm_mat%2==0 ? norm_mat/2 : norm_mat/2+1;
 
        for (int i=0; i < num_rows; i++) {
            for (int j=0; j < num_columns; j++) {
 
-               if (i == j){
+               if (i == j & i < norm_dim & j < norm_dim ){
                    twoDimArray[i][j] = '1';
-
-               }
-
-
-              if (num_rows > num_columns) {
-                  if (j < num_columns_norm & i == j) {
-                      twoDimArray[i][j] = '1';}
-                  else if (i == j & j > num_columns_norm) {
-                      twoDimArray[i][j] = '1';}
-                      else {
-                      twoDimArray[i][j] = '0';}
-              }
-              else if (num_rows < num_columns) {
-                  if (i == j & i < num_rows_norm) {
-                      twoDimArray[i][j] = '1';}
-                      else {
-                      twoDimArray[i][j] = '0';}
-              }
+                   twoDimArray[num_rows-1 - i][j] = '1';
+                   twoDimArray[num_rows-1 - i][num_columns-1 - j] = '1';
+                   twoDimArray[i][num_columns-1 - j] = '1';
+               } else twoDimArray[i][j] = twoDimArray[i][j]=='1' ? '1': '0';
               System.out.print(twoDimArray[i][j] + " ");
            }
            System.out.println();
