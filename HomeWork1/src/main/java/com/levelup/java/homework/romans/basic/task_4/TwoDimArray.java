@@ -38,7 +38,8 @@ public class TwoDimArray {
        int sdvig_col1 = 0;
        int sdvig_col2 = 0;
 
-       int index_i = 0;
+       int shift_row = 0;
+       int shift_col = 0;
 
        if (razd_row <= norm_dim){
            sdvig_row1 = 1;
@@ -48,13 +49,17 @@ public class TwoDimArray {
        } else sdvig_col2 = 1;
 
        for (int i=0; i < num_rows; i++) {
-           if (i < razd_row){
-               index_i = i;
-           }else if (i > razd_row){
-               index_i = i+1;
+           if (i > razd_row) shift_row = 1;
+           shift_col = 0;
            for (int j=0; j < num_columns; j++) {
 
-               if (i < norm_dim + sdvig_row1 & j < norm_dim + sdvig_col1){
+               if (j > razd_col) shift_col = 1;
+               if (i==j&i<norm_dim+shift_row&j<norm_dim || i==num_columns-1-j&i<norm_dim+shift_row&j>norm_dim-1
+                       || num_rows-1-i==j&i>norm_dim+shift_row-1&j<norm_dim || num_rows-1-i==num_columns-1-j&i>norm_dim-1&j>norm_dim-1){
+                   twoDimArray[i][j] = '1';
+               } else twoDimArray[i][j] = '0';
+
+              /* if (i < norm_dim + sdvig_row1 & j < norm_dim + sdvig_col1){
                    twoDimArray[index_i][j] = '1';
                }
 
@@ -82,7 +87,7 @@ public class TwoDimArray {
                    twoDimArray[num_rows-1 - i][j] = '1';
                    twoDimArray[num_rows-1 - i][num_columns-1 - j] = '1';
                    twoDimArray[i][num_columns-1 - j] = '1';
-               } else twoDimArray[i][j] = twoDimArray[i][j]=='1' ? '1' : '0';
+               } else twoDimArray[i][j] = twoDimArray[i][j]=='1' ? '1' : '0';*/
               System.out.print(twoDimArray[i][j] + " ");
            }
            System.out.println();
