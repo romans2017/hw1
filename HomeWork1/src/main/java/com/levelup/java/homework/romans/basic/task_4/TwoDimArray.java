@@ -63,7 +63,7 @@ public class TwoDimArray {
                    if    ((i-shift_row==j-shift_col & i-shift_row<norm_dim & j-shift_col<norm_dim)                    //левая верхняя четверть матрицы
                        || (i-shift_row==num_columns-(j-shift_col)-1 & i-shift_row<norm_dim & j>num_columns-norm_dim-1) //правая верхняя четверть матрицы
                        || (num_rows-(i-shift_row)-1==j-shift_col & i>num_rows-norm_dim-1 & j-shift_col<norm_dim)       //левая нижняя четверть матрицы
-                       || (num_rows-(i-shift_row)-1==num_columns-(j-shift_col)-1 & i>num_rows-norm_dim-1 & j>num_columns-norm_dim)){ //правая нижняя четверть матрицы
+                       || (num_rows-(i-shift_row)-1==num_columns-(j-shift_col)-1 & i>num_rows-norm_dim-1 & j>num_columns-norm_dim-1)){ //правая нижняя четверть матрицы
                        //twoDimArray[i][j] = '1';
                        System.out.print("1 ");
                    } else System.out.print("0 "); //twoDimArray[i][j] = '0';
